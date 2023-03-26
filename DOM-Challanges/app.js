@@ -20,9 +20,13 @@ const h1 = document.querySelector('h1');
 console.log(h1);
 h1.insertAdjacentElement('afterend',div)
 // 5. Add a third paragraph to the div after it’s in the DOM.
-const tempdiv= document.querySelector('boxy')
-const tempP=`<p>This is the temp paragraph</p>`
-tempP.insertAdjacentHTML('beforeend',tempdiv)
+const tempdiv= document.querySelector('.boxy')
+console.log(tempdiv)
+tempdiv.insertAdjacentHTML('beforeend', `
+<p>This is a third paragraph, Yahoo!</p>
+`);
+console.log(tempdiv)
+
 // BEGINNER+ CHALLENGES //
 
 // 1. Add an unordered sublist to the last list item with three children ("one", "two", and "three").
