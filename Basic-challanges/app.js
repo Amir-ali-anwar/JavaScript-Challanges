@@ -35,4 +35,16 @@ let output= `'output format is mm-dd-yyyy', ${singleMonth}${currentMonth}-${toda
 console.log(output);
 return output
 }
-mmDdYy()
+// mmDdYy()
+
+
+// 3. Write a JavaScript program to find the area of a triangle where three sides are 5, 6, 7.  
+
+const triangleArea=(a,b,c)=>{
+if(!a || !b || !c) throw Error("please provide values")   
+const s= a+b+c/2;
+const area= Math.floor(Math.sqrt(s*(s-a)*(s-b)*(s-c)));
+console.log(area);
+return area
+}
+triangleArea(1,2,4)
