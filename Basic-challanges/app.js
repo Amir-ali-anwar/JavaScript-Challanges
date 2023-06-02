@@ -61,13 +61,36 @@ const integetLimit = (param) => {
   if (!param) throw Error("please provide values");
   const ramdomNumber = Math.ceil(Math.random() * 10);
 
-  const gnum = prompt('Guess the number between 1 and 10 inclusive');
-   if(ramdomNumber===gnum){
-    console.log('Good Work');
-   }else{
-    console.log('Not matched');
-   }
+  const gnum = prompt("Guess the number between 1 and 10 inclusive");
+  if (ramdomNumber === gnum) {
+    console.log("Good Work");
+  } else {
+    console.log("Not matched");
+  }
   return param;
 };
 
-integetLimit(12);
+// integetLimit(12);
+let number1 = document.querySelector("#firstNumber");
+console.log({number1});
+// 5. Write a JavaScript program to calculate multiplication and division of two numbers (input from the user).
+function calculator() {
+  let result1 = document.querySelector("#result");
+  let btns = document.querySelectorAll(".btn");
+  let number1 = document.getElementById("firstNumber").value;
+  // console.log({number1});
+  let number2 = document.getElementById("secondNumber").value;
+  btns?.forEach((btn) => {
+    let buttonContent = btn.textContent;
+    btn.addEventListener("click", (e) => {
+    let buttonText=e.currentTarget.textContent
+     if(buttonText==='Multiply'){
+      result1.textContent = number1 * number2
+     } 
+     if(buttonText==='Divide') console.log('Divide');
+     
+    });
+  });
+}
+
+calculator();
