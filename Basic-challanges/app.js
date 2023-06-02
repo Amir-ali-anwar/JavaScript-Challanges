@@ -71,8 +71,8 @@ const integetLimit = (param) => {
 };
 
 // integetLimit(12);
-let number1 = document.querySelector("#firstNumber");
-console.log({number1});
+// let number1 = document.querySelector("#firstNumber");
+// console.log({number1});
 // 5. Write a JavaScript program to calculate multiplication and division of two numbers (input from the user).
 function calculator() {
   let result1 = document.querySelector("#result");
@@ -83,14 +83,39 @@ function calculator() {
   btns?.forEach((btn) => {
     let buttonContent = btn.textContent;
     btn.addEventListener("click", (e) => {
-    let buttonText=e.currentTarget.textContent
-     if(buttonText==='Multiply'){
-      result1.textContent = number1 * number2
-     } 
-     if(buttonText==='Divide') console.log('Divide');
-     
+      let buttonText = e.currentTarget.textContent;
+      if (buttonText === "Multiply") {
+        result1.textContent = number1 * number2;
+      }
+      if (buttonText === "Divide") console.log("Divide");
     });
   });
 }
 
-calculator();
+// calculator();
+
+// 6. Write a JavaScript program to compute the sum of the two given integers. If the two values are the same, then return triple their sum.
+
+const integersSum = (a, b) => {
+  let result;
+  if ((!a, !b)) throw Error("please provide both values");
+  if (a === b) {
+    return (result = 3 * (a + b));
+  } else {
+    return (result = a + b);
+  }
+};
+// console.log(integersSum(3,3));
+
+// 7. Write a JavaScript program to compute the absolute difference between a specified number and 19. Returns triple the absolute difference if the specified number is greater than 19.
+
+const absoluteDifference = (num) => {
+  if (!num) throw Error("please provide num value");
+  if (num > 19) {
+    return (num - 19) * 3;
+  } else {
+    return 19 - num;
+  }
+};
+
+console.log(absoluteDifference(2));
