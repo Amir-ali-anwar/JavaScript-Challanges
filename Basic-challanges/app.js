@@ -125,11 +125,21 @@ const absoluteDifference = (num) => {
 const pairOfNumbers = (a, b) => {
   if (a === 50 || b === 50 || a + b === 50) return true;
 };
-console.log(pairOfNumbers(16, 34));
+// console.log(pairOfNumbers(16, 34));
 
 //9. Write a JavaScript program to check whether a given integer is within 20 of 100 or 400.  
 const testvalue=(num)=>{
   return  ((Math.abs(100-num)<=20) || (Math.abs(400-num)<=20))
 }
 
-testvalue(50)
+// testvalue(50)
+
+//10 . Write a JavaScript program to create another string by adding "Py" in front of a given string. If the given string begins with "Py" return the original string. 
+
+const pystring=(value)=>{
+  if(value && value.startsWith('Py')){
+    return value
+  }
+  return `Py${value}`
+}
+console.log(pystring('Pyar'))
