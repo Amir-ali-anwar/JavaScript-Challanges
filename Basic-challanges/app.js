@@ -152,3 +152,13 @@ const removeChar=(userstring,position)=>{
 }
 // console.log(removeChar("Python",0));
 
+//12. Write a JavaScript program to create a string from a given string. This is done by taking the last 3 characters and adding them at both the front and back. The string length must be 3 or more.
+
+
+const createString=(string)=>{
+ const lastString= string.slice(-3)
+ let newstring= `${lastString} ${string} ${lastString}`
+  return newstring
+}
+
+console.log(createString('data'));
