@@ -127,38 +127,46 @@ const pairOfNumbers = (a, b) => {
 };
 // console.log(pairOfNumbers(16, 34));
 
-//9. Write a JavaScript program to check whether a given integer is within 20 of 100 or 400.  
-const testvalue=(num)=>{
-  return  ((Math.abs(100-num)<=20) || (Math.abs(400-num)<=20))
-}
+//9. Write a JavaScript program to check whether a given integer is within 20 of 100 or 400.
+const testvalue = (num) => {
+  return Math.abs(100 - num) <= 20 || Math.abs(400 - num) <= 20;
+};
 
 // testvalue(50)
 
-//10 . Write a JavaScript program to create another string by adding "Py" in front of a given string. If the given string begins with "Py" return the original string. 
+//10 . Write a JavaScript program to create another string by adding "Py" in front of a given string. If the given string begins with "Py" return the original string.
 
-const pystring=(value)=>{
-  if(value && value.startsWith('Py')){
-    return value
+const pystring = (value) => {
+  if (value && value.startsWith("Py")) {
+    return value;
   }
-  return `Py${value}`
-}
+  return `Py${value}`;
+};
 // console.log(pystring('Pyar'))
 
-// 11. Write a JavaScript program to remove a character at the specified position in a given string and return the modified string.  
+// 11. Write a JavaScript program to remove a character at the specified position in a given string and return the modified string.
 
-const removeChar=(userstring,position)=>{
-  const newChar= userstring.substring(0,position+1)
-  return newChar
-}
+const removeChar = (userstring, position) => {
+  const newChar = userstring.substring(0, position + 1);
+  return newChar;
+};
 // console.log(removeChar("Python",0));
 
 //12. Write a JavaScript program to create a string from a given string. This is done by taking the last 3 characters and adding them at both the front and back. The string length must be 3 or more.
 
+const createString = (string) => {
+  const lastString = string.slice(-3);
+  let newstring = `${lastString} ${string} ${lastString}`;
+  return newstring;
+};
 
-const createString=(string)=>{
- const lastString= string.slice(-3)
- let newstring= `${lastString} ${string} ${lastString}`
-  return newstring
-}
+// console.log(createString('data'));
 
-console.log(createString('data'));
+//13. Write a JavaScript program to check whether a given positive number is a multiple of 3 or 7.
+
+const checkMuliple = (num) => {
+  if (num % 3 === 0 || num % 7 === 0) return true;
+  return false
+};
+
+console.log(checkMuliple(2));
