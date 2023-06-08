@@ -166,7 +166,22 @@ const createString = (string) => {
 
 const checkMuliple = (num) => {
   if (num % 3 === 0 || num % 7 === 0) return true;
-  return false
+  return false;
 };
 
-console.log(checkMuliple(2));
+// console.log(checkMuliple(2));
+
+//14. Write a JavaScript program to find the largest of three given integers.
+
+const maxOfThree = (num1, num2, num3) => {
+  let maxvalue = num1;
+  if (num2 > maxvalue) {
+    maxvalue = num2;
+  }
+  if (num3 > maxvalue) {
+    maxvalue = num3;
+  }
+  return maxvalue;
+};
+
+console.log(maxOfThree(12, 23, 1111));
