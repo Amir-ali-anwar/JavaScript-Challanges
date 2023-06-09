@@ -184,4 +184,20 @@ const maxOfThree = (num1, num2, num3) => {
   return maxvalue;
 };
 
-console.log(maxOfThree(12, 23, 1111));
+// console.log(maxOfThree(12, 23, 1111));
+
+//15. Write a JavaScript program to produce a new string that has the first 3 characters in lower case from a given string. If the string length is less than 3 convert all the characters to upper case.  
+
+const generateString=(userstring)=>{
+  let newstring=''
+  if(userstring.length<=3) {
+   newstring= userstring.toUpperCase()
+  }else{
+    newstring= userstring.toLowerCase().substring(0,3)
+  }
+ 
+  // console.log(userstring); 
+  return newstring
+
+}
+console.log(generateString('re'))
