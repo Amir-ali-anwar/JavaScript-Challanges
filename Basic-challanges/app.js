@@ -186,18 +186,30 @@ const maxOfThree = (num1, num2, num3) => {
 
 // console.log(maxOfThree(12, 23, 1111));
 
-//15. Write a JavaScript program to produce a new string that has the first 3 characters in lower case from a given string. If the string length is less than 3 convert all the characters to upper case.  
+//15. Write a JavaScript program to produce a new string that has the first 3 characters in lower case from a given string. If the string length is less than 3 convert all the characters to upper case.
 
-const generateString=(userstring)=>{
-  let newstring=''
-  if(userstring.length<=3) {
-   newstring= userstring.toUpperCase()
-  }else{
-    newstring= userstring.toLowerCase().substring(0,3)
+const generateString = (userstring) => {
+  let newstring = "";
+  if (userstring.length <= 3) {
+    newstring = userstring.toUpperCase();
   }
- 
-  // console.log(userstring); 
-  return newstring
+  if (userstring.length > 3) {
+    newstring = userstring.toLowerCase().substring(0, 3);
+  }
+  // console.log(userstring);
+  return newstring;
+};
+// console.log(generateString('re'))
 
-}
-console.log(generateString('re'))
+// 16.Write a JavaScript program to check a student's total marks in various examinations. The student will get A+ grade if the total marks are in the range 89..100 inclusive, if the examination is "Final-exam" the student will receive A+ grade and total marks must be greater than or equal to 90. If the student gets an A+ grade, return true, otherwise return false.
+//Click me to see the solution
+
+// let cat = Object.create({}, {
+//   name: {
+//     value: "Whiskers",
+//     writable: true,
+//     enumerable: true,
+//     configurable: true
+//   },
+// });
+// console.log(cat.name );
