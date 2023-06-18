@@ -213,3 +213,53 @@ const generateString = (userstring) => {
 //   },
 // });
 // console.log(cat.name );
+
+// Javascript basic concepts
+// console.log(a);
+// var a=10;
+// const a=12
+// console.log(a);
+
+const myfun = () => {
+  let a = 10;
+
+  console.log(a);
+  return a;
+};
+// console.log(myfun());
+
+// hoisting
+
+let myname = "amir";
+function printName() {
+  console.log(myname);
+}
+// printName()
+myname = "amir ali anwar";
+
+// Closure
+
+function outerFunction(outerVariable) {
+  return function innerFunction(innervariable) {
+    console.log(`Outer Variable:${outerVariable}`);
+    console.log(`Inner Variable:${innervariable}`);
+  };
+}
+
+const mewFunction = outerFunction("outside");
+
+// console.log(mewFunction("amir ali anwar"));
+
+// output challange
+var array=[1,2,3,4,5,6]
+function output() {
+  for (var i = 0; i <= array.length; i++) {
+    (function inner(i) {
+      setTimeout(() => {
+        console.log();
+        console.log(array[i]);
+      }, i * 1000);
+    })(i)
+  }
+}
+output();
