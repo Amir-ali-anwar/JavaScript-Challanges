@@ -262,4 +262,14 @@ function output() {
     })(i)
   }
 }
-output();
+// output();
+
+//17. Find the largest and smallest element in the arrays.
+
+const arr= [12,3,45,56,92]
+
+
+const getLargest=(arr)=>{
+ return arr.reduce((arr,curr)=>Math.max(arr,curr))
+}
+console.log(getLargest(arr))
