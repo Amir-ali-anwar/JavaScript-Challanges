@@ -251,7 +251,7 @@ const mewFunction = outerFunction("outside");
 // console.log(mewFunction("amir ali anwar"));
 
 // output challange
-var array=[1,2,3,4,5,6]
+var array = [1, 2, 3, 4, 5, 6];
 function output() {
   for (var i = 0; i <= array.length; i++) {
     (function inner(i) {
@@ -259,7 +259,23 @@ function output() {
         console.log();
         console.log(array[i]);
       }, i * 1000);
-    })(i)
+    })(i);
   }
 }
-output();
+// output();
+
+// 17. Find the second largest number in the given array
+
+
+
+let givenArray = [3, 4, 5, 9, 7, 5, 6, 9];
+
+// first solution 
+function second_highest(arr)
+{
+  return second_highest = arr.sort(function(a, b) { return b - a; })[1];
+  // return second_highest;
+
+}
+console.log(second_highest(givenArray))
+
