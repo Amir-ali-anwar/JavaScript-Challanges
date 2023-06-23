@@ -279,6 +279,18 @@ function second_highest(arr)
 }
 console.log(second_highest(givenArray))
 
+// second solution
+const arraylarger = (arraylarger) => {
+  if (arraylarger.length < 2) return null;
+  let largest= Math.max(...arraylarger)
+  let secondLargest= -Infinity;
+  for (let index = 0; index < arraylarger.length; index++) {
+    if(arraylarger[index]>largest){
+      secondLargest= largest
+    }
+  }
+};
+
 //18. Find the largest and smallest element in the arrays.
 
 const arr= [12,3,45,56,92]
