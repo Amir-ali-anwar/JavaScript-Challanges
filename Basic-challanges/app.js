@@ -266,35 +266,58 @@ function output() {
 
 // 17. Find the second largest number in the given array
 
-
-
 let givenArray = [3, 4, 5, 9, 7, 5, 6, 9];
 
-// first solution 
-function second_highest(arr)
-{
-  return second_highest = arr.sort(function(a, b) { return b - a; })[1];
+// first solution
+function second_highest(arr) {
+  return (second_highest = arr.sort(function (a, b) {
+    return b - a;
+  })[1]);
   // return second_highest;
-
 }
-console.log(second_highest(givenArray))
+// console.log(second_highest(givenArray))
 
 // second solution
 const arraylarger = (arraylarger) => {
   if (arraylarger.length < 2) return null;
-  let largest= Math.max(...arraylarger)
-  let secondLargest= -Infinity;
+  let largest = Math.max(...arraylarger);
+  let secondLargest = -Infinity;
   for (let index = 0; index < arraylarger.length; index++) {
-    if(arraylarger[index]>largest){
-      secondLargest= largest
+    if (arraylarger[index] > largest) {
+      secondLargest = largest;
     }
   }
 };
 
 //18. Find the largest and smallest element in the arrays.
 
-const arr= [12,3,45,56,92]
-const getLargest=(arr)=>{
- return arr.reduce((arr,curr)=>Math.max(arr,curr)) 
+const arr = [12, 3, 45, 56, 92];
+const getLargest = (arr) => {
+  return arr.reduce((arr, curr) => Math.max(arr, curr));
+};
+// console.log(getLargest(arr))
+
+let button = document.querySelector(".btn");
+const handler = button.addEventListener("click", infinite);
+function infinite() {
+  for (let index = 20; index > 0; index++) {
+    console.log(index);
+  }
 }
-console.log(getLargest(arr))
+
+// infinite()
+
+const magicsquare = [
+  [2, 7, 6],
+  [9, 5, 1],
+  [4, 3, 8],
+];
+
+// for (let index = 0; index < magicsquare.length; index++) {
+//   const row = magicsquare[index];
+//   let sum = 0;
+//   for (let j = 0; j < row.length; j++) {
+//     sum += row[j];
+//   }
+//   console.log(`${row} summed to sum ${sum}`);
+// }
