@@ -297,8 +297,8 @@ const getLargest = (arr) => {
 };
 // console.log(getLargest(arr))
 
-let button = document.querySelector(".btn");
-const handler = button.addEventListener("click", infinite);
+// let button = document.querySelector(".btn");
+// const handler = button.addEventListener("click", infinite);
 function infinite() {
   for (let index = 20; index > 0; index++) {
     console.log(index);
@@ -321,3 +321,68 @@ const magicsquare = [
 //   }
 //   console.log(`${row} summed to sum ${sum}`);
 // }
+
+// for (const iterator of magicsquare) {
+//   let sum = 0;
+//   for (const row of iterator) {
+//     sum += row;
+//   }
+//   console.log(`${iterator} summed to sum ${sum}`);
+// }
+
+// 19. Write a JavaScript program to convert letters of a given string alphabetically.
+
+const alphabeticOrder = (str) => {
+  console.log(str);
+};
+// alphabeticOrder('Python')
+
+// event loop
+
+// console.log("start")
+// setTimeout(()=>{
+//   console.log("callback1");
+// },3000)
+
+// console.log('end')
+
+// setTimeout(() => {
+//   console.log("callback2");
+// }, 10000);
+
+// Promise.resolve().then(()=>{
+//   console.log("resolve");
+// })
+
+//20.  Write a JavaScript program to compare two objects to determine if the first contains equivalent property values to the second one.
+
+const matchObj = (obj1, obj2) => {
+  const object1 = Object.keys(obj1);
+  const object2 = Object.keys(obj2);
+  if (object1.length !== object2.length) return false;
+  for (const key  of object1) {
+    if (obj1[key] !== obj2[key]) {
+      return false;
+    }
+    else{
+      return true
+    }
+  }
+};
+
+// console.log(
+//   matchObj(
+//     { age: 25, hair: "long", papu:'haye' },
+//     { hair: "long", beard: true }
+//   )
+// );
+// second solution
+
+const matches=(obj,souce)=>{
+return Object.keys(obj).every(key=>obj.hasOwnProperty(key) && obj[key] === souce[key])
+}
+
+const obj1 = { age: 25, hair: 'long', beard: true };
+const obj2 = { hair: 'long', beard: true };
+
+console.log(matches(obj1, obj2)); // true
