@@ -360,12 +360,11 @@ const matchObj = (obj1, obj2) => {
   const object1 = Object.keys(obj1);
   const object2 = Object.keys(obj2);
   if (object1.length !== object2.length) return false;
-  for (const key  of object1) {
+  for (const key of object1) {
     if (obj1[key] !== obj2[key]) {
       return false;
-    }
-    else{
-      return true
+    } else {
+      return true;
     }
   }
 };
@@ -378,42 +377,79 @@ const matchObj = (obj1, obj2) => {
 // );
 // second solution
 
-const matches=(obj,souce)=>{
-return Object.keys(obj).every(key=>obj.hasOwnProperty(key) && obj[key] === souce[key])
-}
+const matches = (obj, souce) => {
+  return Object.keys(obj).every(
+    (key) => obj.hasOwnProperty(key) && obj[key] === souce[key]
+  );
+};
 
-const obj1 = { age: 25, hair: 'long', beard: true };
-const obj2 = { hair: 'long', beard: true };
+const obj1 = { age: 25, hair: "long", beard: true };
+const obj2 = { hair: "long", beard: true };
 
 // console.log(matches(obj1, obj2)); // true
 
-
 //21. Write a JavaScript program to convert a comma-separated value (CSV) string to a 2D array.
 
-
-const csv_toArray=(data)=>{
-  const row= data.trim("").split("\n").slice(0, data.length-1)
-  let newarray=[];
+const csv_toArray = (data) => {
+  const row = data
+    .trim("")
+    .split("\n")
+    .slice(0, data.length - 1);
+  let newarray = [];
   for (let index = 0; index < row.length; index++) {
-    const newrow= row[index].split(',')
-    newarray.push(newrow)
-    
+    const newrow = row[index].split(",");
+    newarray.push(newrow);
   }
-  return newarray
-}
+  return newarray;
+};
 // console.log(csv_toArray('a,b\nc,d'))
 // console.log(csv_toArray('a;b\nc;d', ';'))
 // console.log(csv_toArray('John,Doe,25\nJane,Smith,30\nBob,Johnson,40'))
 
 //22. Write a JavaScript program to convert a comma-separated value (CSV) string to a 2D array of objects. The first row of the string is used as the title row.
 
-const CSV_to_JSON=(data)=>{
-  const title= data.slice(0,data.indexOf('\n')).split(',')
-  return data.slice(data.indexOf('\n') + 1).split('\n').map((value)=>{
-    const singlevalues= value.split(',')
-    return title.reduce((obj, title, index)=>{
-     return {...obj,[title]:singlevalues[index]}
-    },{})
+const CSV_to_JSON = (data) => {
+  const title = data.slice(0, data.indexOf("\n")).split(",");
+  return data
+    .slice(data.indexOf("\n") + 1)
+    .split("\n")
+    .map((value) => {
+      const singlevalues = value.split(",");
+      return title.reduce((obj, title, index) => {
+        return { ...obj, [title]: singlevalues[index] };
+      }, {});
+    });
+};
+// console.log(CSV_to_JSON('col1,col2\na,b\nc,d')); // [{'col1': 'a', 'col2': 'b'}, {'col1': 'c', 'col2': 'd'}];
+
+// 23. Write a JavaScript program to filter out the specified values from a specified array. Return the original array without filtered values.
+
+const filter_Out_array = (array, ...args) => {
+  let sorted = array.filter((singleArg) => !args.includes(singleArg));
+  return sorted.forEach((data) => array.push(data));
+};
+
+let arra1 = ["a", "b", "c", "a", "b", "c"];
+// let sortFN= filter_Out_array(arra1, "a", "b");
+// console.log(filter_Out_array(arra1, "a", "b"));
+
+// 24. Write a JavaScript program to filter out non-unique values in an array.
+
+const not_Unique=(arr)=>{
+ return arr.filter((item,index )=>{
+   return arr.indexOf(item)=== arr.lastIndexOf(item)
   })
+ }
+// console.log(not_Unique([1, 2, 2, 3, 4, 4, 5]));  
+
+// 25. Write a JavaScript program to create an array out of the arrays by creating each possible pair from the arrays.
+
+const arrayPairs=(arr1,arr2)=>{
+  return arr1.map((item1) => {
+  return arr2.map((item2) => [item1, item2])
+}).reduce((acc,curr)=>{
+   
+    return [...acc,...curr]
+  },[]);
 }
-console.log(CSV_to_JSON('col1,col2\na,b\nc,d')); // [{'col1': 'a', 'col2': 'b'}, {'col1': 'c', 'col2': 'd'}];
+console.log(arrayPairs([1, 2], ['a', 'b']))
