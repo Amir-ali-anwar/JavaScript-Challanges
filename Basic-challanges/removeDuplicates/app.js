@@ -1,6 +1,14 @@
 function removeDuplicates(arr){
     console.log(arr);
     let uniqueArr=[]
+    for (let index = 0; index < arr.length; index++) {
+        const element = arr[index];
+       if(!uniqueArr.includes(element)){
+        uniqueArr.push(element)
+       }
+        
+    }
+    return uniqueArr
 }
 
 
